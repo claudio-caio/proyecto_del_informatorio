@@ -30,3 +30,4 @@ class ArticuloDeleteView(DeleteView):
     template_name = 'emprendimientos/eliminar_articulo.html'
     success_url = reverse_lazy('emprendimientos:lista_articulos')
 
+##################comntario
