@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    LISTA DE ARTÍCULOS EMPRENDIMIENTOS
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>LISTA DE ARTÍCULOS EMPRENDIMIENTOS</h1>
+    <div>
+        {% for articulo in object_list %}
+            <div class="articulo-item">
+                <img src="{{ i.imagen.url }}" alt="{{ articulo.titulo }}" width="150">
+                <p>Título: {{ articulo.titulo }}</p>
+                <p>Autor: {{ articulo.autor }}</p>
+                <p><a href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">VER MÁS DETALLE</a></p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'index' %}">VOLVER AL HOME</a>
+{% endblock contenido %}

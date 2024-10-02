@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+
+    <h4>CREAR UN LIBRO</h4>
+
+    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        {{form.as_p }}
+
+        <button type="submit">CREAR</button>
+    </form>
+
+    <a href="{% url 'emprendimientos:lista_articulos' %}">Volver a la lista de artículos</a>
+{% endblock contenido%}
