@@ -9,7 +9,7 @@
     <div>
         {% for articulo in object_list %}
             <div class="articulo-item">
-                <img src="{{ i.imagen.url }}" alt="{{ articulo.titulo }}" width="150">
+                <img src="{{ articulo.imagen.url }}" alt="{{ articulo.titulo }}" width="150" height="100">
                 <p>Título: {{ articulo.titulo }}</p>
                 <p>Autor: {{ articulo.autor }}</p>
                 <p><a href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">VER MÁS DETALLE</a></p>
