@@ -15,4 +15,4 @@ class AgregarComentarioView(CreateView):
 
     def get_success_url(self):
         # Redirigir a la vista de detalle del artículo después de agregar el comentario
-        return reverse_lazy('detalle_articulo', kwargs={'articulo_id': self.kwargs['articulo_id']})
+        return reverse_lazy('emprendimientos:detalle_articulo', kwargs={'pk': self.kwargs['articulo_id']})

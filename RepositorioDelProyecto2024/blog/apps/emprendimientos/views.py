@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.urls import reverse_lazy
 from .models import Articulo, Categoria
 from .forms import ArticuloForm
+from apps.comentarios.models import Comentario
 
 class ArticuloListView(ListView):
     model = Articulo
@@ -24,6 +25,22 @@ class ArticuloDetailView(DetailView):
     model = Articulo
     template_name = 'emprendimientos/detalle_articulo.html'
     context_object_name = 'articulo'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comentarios'] = Comentario.objects.filter(articulo=self.object)
+        return context
+
+    def post(self, request, *args, **kwargs):
+        articulo = self.get_object()
+        contenido = request.POST.get('contenido')  # Obtiene el contenido del comentario
+        if contenido:
+            Comentario.objects.create(
+                contenido=contenido,
+                articulo=articulo,
+                autor=request.user
+            )
+        return self.get(request, *args, **kwargs)
 
 class ArticuloCreateView(CreateView):
     model = Articulo

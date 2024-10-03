@@ -6,16 +6,35 @@
 
 {% block contenido %}
     <h1>LISTA DE ARTÍCULOS EMPRENDIMIENTOS</h1>
+
+    <!-- Formulario para filtrar por categoría -->
+    <form method="GET" action="">
+        <label for="categoria">Filtrar por categoría:</label>
+        <select name="categoria" id="categoria" onchange="this.form.submit()">
+            <option value="">Todas las categorías</option>
+            {% for categoria in categorias %}
+                <option value="{{ categoria.id }}" {% if request.GET.categoria == categoria.id|stringformat:"s" %}selected{% endif %}>
+                    {{ categoria.nombre }}
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <!-- Lista de artículos -->
     <div>
         {% for articulo in object_list %}
             <div class="articulo-item">
                 <img src="{{ articulo.imagen.url }}" alt="{{ articulo.titulo }}" width="150" height="100">
                 <p>Título: {{ articulo.titulo }}</p>
                 <p>Autor: {{ articulo.autor }}</p>
+                <p><strong>Categoría:</strong> {{ articulo.categoria.nombre }}</p>
                 <p><a href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">VER MÁS DETALLE</a></p>
             </div>
+        {% empty %}
+            <p>No hay artículos disponibles en esta categoría.</p>
         {% endfor %}
     </div>
 
     <a href="{% url 'index' %}">VOLVER AL HOME</a>
+
 {% endblock contenido %}
