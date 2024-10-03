@@ -10,14 +10,14 @@ class ArticuloListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        categoria_id = self.request.GET.get('categoria')  # Obtener el id de la categoría del query string
+        categoria_id = self.request.GET.get('categoria')  
         if categoria_id:
-            queryset = queryset.filter(categoria_id=categoria_id)  # Filtrar por categoría
+            queryset = queryset.filter(categoria_id=categoria_id)  
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['categorias'] = Categoria.objects.all()  # Pasar todas las categorías al template
+        context['categorias'] = Categoria.objects.all()  
         return context
     
 class ArticuloDetailView(DetailView):
