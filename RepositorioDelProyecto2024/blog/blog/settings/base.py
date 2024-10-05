@@ -118,3 +118,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
+
+LOGIN_REDIRECT_URL = 'emprendimientos:index'  # Redirige después de iniciar sesión
+LOGOUT_REDIRECT_URL = 'emprendimientos:index'  # Redirige después de cerrar sesión
+LOGIN_URL = 'usuarios:login'  # Página de login si un usuario no autenticado intenta acceder a una vista restringida

@@ -7,16 +7,18 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class RegistroUsuario(CreateView):
-    template_name = 'usuarios/registro.html'
+    template_name = 'Usuarios/registro.html'
     form_class = FormularioRegistroUsuario
     success_url = reverse_lazy('index')
 
 class InicioSesion(LoginView):
-    template_name = 'usuarios/login.html'
+    template_name = 'Usuarios/login.html'
+    next_page= reverse_lazy('index')
+
 
 class CerrarSesion(LogoutView):
-    template_name = 'usuarios/logout.html'
+    template_name = 'Usuarios/logout.html'
     next_page = reverse_lazy('index')
 
 class PerfilView(LoginRequiredMixin, TemplateView):
-    template_name = 'usuarios/perfil.html'
+    template_name = 'Usuarios/perfil.html'

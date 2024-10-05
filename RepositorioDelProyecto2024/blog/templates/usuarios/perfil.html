@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+
+{% block contenido %}
+  <h4>Perfil de {{ user.username }}</h4>
+  <p>Email: {{ user.email }}</p>
+  <p>Nombre: {{ user.first_name }} {{ user.last_name }}</p>
+  <p>Fecha de registro: {{ user.date_joined }}</p>
+  
+{% endblock contenido %}

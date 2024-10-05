@@ -38,11 +38,20 @@
                     <div class="contenedor__registro">
                         <ul class="encabezado__navegador--registro">
                             <!--perfil-->
-                            <li><a href="" class="registro"></a></li>
-                            <li><a href="" class="registro"></a></li>
-                            <!--logiarc-->
-                            <li><a href="" class="registro">Ingresar</a></li>
-                            <li><a href="{% url 'Usuarios:registro_usuario' %}" class="registro">Registrarme</a></li>
+                            <li><a href="{% url 'Usuarios:perfil' %}" class="registro"> Perfil de Usuario</a></li> 
+                                                       
+                            {% if user.is_authenticated %}
+                                <li> 
+                                    <form action="{% url 'Usuarios:logout' %}" method="post" style="display:inline;">
+                                       {% csrf_token %}
+                                       <button type="submit" class="registro">Cerrar sesión</button>
+                                    </form>
+                                </li>
+                            {% else %}
+                                 <!--logiarc-->
+                                <li><a href="{% url 'Usuarios:login' %}" class="registro">Iniciar Sesión</a></li>
+                                <li><a href="{% url 'Usuarios:registro_usuario' %}" class="registro">Registrarme</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
