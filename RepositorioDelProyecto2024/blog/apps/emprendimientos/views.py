@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from .models import Articulo, Categoria
 from .forms import ArticuloForm
 from apps.comentarios.models import Comentario
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 class ArticuloListView(ListView):
     model = Articulo
@@ -33,7 +34,7 @@ class ArticuloDetailView(DetailView):
 
     def post(self, request, *args, **kwargs):
         articulo = self.get_object()
-        contenido = request.POST.get('contenido')  # Obtiene el contenido del comentario
+        contenido = request.POST.get('contenido')  
         if contenido:
             Comentario.objects.create(
                 contenido=contenido,
@@ -42,20 +43,32 @@ class ArticuloDetailView(DetailView):
             )
         return self.get(request, *args, **kwargs)
 
-class ArticuloCreateView(CreateView):
+class ArticuloCreateView(LoginRequiredMixin, CreateView):
     model = Articulo
     form_class = ArticuloForm
     template_name = 'emprendimientos/crear_articulo.html'
     success_url = reverse_lazy('emprendimientos:lista_articulos')  
 
-class ArticuloUpdateView(UpdateView):
+    def form_valid(self, form):
+        form.instance.autor = self.request.user  # Asignar el autor al usuario logueado
+        return super().form_valid(form)
+    
+
+class ArticuloUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Articulo
     form_class = ArticuloForm
     template_name = 'emprendimientos/editar_articulo.html'
-    success_url = reverse_lazy('emprendimientos:lista_articulos')  
+    success_url = reverse_lazy('emprendimientos:lista_articulos')
 
-class ArticuloDeleteView(DeleteView):
+    def test_func(self):
+        articulo = self.get_object()
+        return self.request.user == articulo.autor  # Solo el autor puede editar
+
+class ArticuloDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Articulo
     template_name = 'emprendimientos/eliminar_articulo.html'
     success_url = reverse_lazy('emprendimientos:lista_articulos')
 
+    def test_func(self):
+        articulo = self.get_object()
+        return self.request.user == articulo.autor  # Solo el autor puede eliminar
