@@ -38,9 +38,8 @@
                     <div class="contenedor__registro">
                         <ul class="encabezado__navegador--registro">
                             <!--perfil-->
-                            <li><a href="{% url 'Usuarios:perfil' %}" class="registro"> Perfil de Usuario</a></li> 
-                                                       
                             {% if user.is_authenticated %}
+                            <li><a href="{% url 'Usuarios:perfil' %}" class="registro"> Perfil de Usuario</a></li>                     
                                 <li> 
                                     <form action="{% url 'Usuarios:logout' %}" method="post" style="display:inline;">
                                        {% csrf_token %}
