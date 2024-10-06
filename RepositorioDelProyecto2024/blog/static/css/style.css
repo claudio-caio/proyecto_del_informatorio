@@ -74,12 +74,14 @@ a {
 }
 
 /*Encabezado End*/
-
+ 
+ 
 
 /* Footer */
 
 .footer__container {
-    background-color: var(--color-azulpupura);
+    background-image: url('../img/2.png');
+    background-size: cover;
     width: 100%;
     padding: 40px 0;
     margin-top: -4px;

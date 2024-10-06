@@ -2,6 +2,7 @@
 .pantalla {
     margin: 0 auto;
     margin-top: 40px;
+    background-color: var(--color-azulpupura);
 }
 
 .portada {
@@ -9,3 +10,73 @@
 }
 
 /*Image END*/
+
+
+/*Articulos*/
+
+.contenido__articulos{
+    max-width: 100%; 
+    padding-top: 10px;
+    background-image: url('../img/fondoprueba.png');
+    background-repeat: repeat-y;
+    
+}
+
+
+.articulos__fondo {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+    align-items: center;
+
+}
+
+.columna {
+    display: flex;
+    gap: 117px;
+    padding-bottom: 40px;
+    
+}
+
+.articulos {
+    border-radius: 50%;
+    
+}
+
+a:hover {
+ color: var(--color-negro);
+}
+
+.articulos .articulos__columna {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    
+}
+
+
+
+
+.articulos__columna .texto {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-purpura);
+    color: var(--color-blanco)
+    
+}
+
+
+
+.imagen__emprendimiento {
+    width: 225.5px;
+    height: 199.5px;
+}
+
+.articulos__columna:hover {
+    transform: scale(1.15);
+}
+
+/*Articulos End*/
