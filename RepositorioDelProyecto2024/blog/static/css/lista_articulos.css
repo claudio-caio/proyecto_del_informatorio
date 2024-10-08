@@ -1,0 +1,23 @@
+.contenedor__listas {
+    max-width: 1472px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo__articulos {
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+.filtrado__lista {
+    padding: 20px 0;
+}
+
+
+/*
+width: 225.5px;
+height: 199.5px;
+*/
