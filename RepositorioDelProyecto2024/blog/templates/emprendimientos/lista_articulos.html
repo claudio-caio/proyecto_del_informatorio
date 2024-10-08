@@ -8,7 +8,7 @@
 <section class="contenedor__listas">
 
 <div class="titulo__articulos">
-    <h1>LISTA DE ARTÍCULOS EMPRENDIMIENTOS</h1>
+    <h2>LISTA DE ARTÍCULOS EMPRENDIMIENTOS</h2>
 </div>
     
     <!-- Formulario para filtrar por categoría -->
@@ -32,15 +32,16 @@
         <div class="articulo-item">
             <!-- Validación para mostrar la imagen si existe, y mensaje si no existe -->
             {% if articulo.imagen %}
-                <img  class="imagen__cargadad" src="{{ articulo.imagen.url }}" alt="{{ articulo.titulo }}" width="150" height="100">
+                <img  class="imagen__cargadad" src="{{ articulo.imagen.url }}" alt="{{ articulo.titulo }}">
             {% else %}
                 <p>No hay imagen disponible</p>
             {% endif %}
-            
-            <p>Título: {{ articulo.titulo }}</p>
-            <p>Autor: {{ articulo.autor }}</p>
-            <p><strong>Categoría:</strong> {{ articulo.categoria.nombre }}</p>
-            <p><a href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">VER MÁS DETALLE</a></p>
+            <div class="articulo_caracteristicas">
+                <p class="articulo__titulo"> {{ articulo.titulo }}</p>
+                <p>Autor: {{ articulo.autor }}</p>
+                <p><strong>Categoría:</strong> {{ articulo.categoria.nombre }}</p>
+            </div>
+            <a class="detalles" href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">VER MÁS DETALLE</a>
         </div>
         {% empty %}
         <p>No hay artículos disponibles en esta categoría.</p>
