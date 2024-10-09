@@ -25,6 +25,13 @@
             </select>
         </form>
     </div>
+
+    <!-- Enlaces para ordenar por visitas -->
+    <div class="ordenar__visitas">
+        <h3>Ordenar por visitas:</h3>
+        <a href="?ordenar_por=asc{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">Ascendente</a>
+        <a href="?ordenar_por=desc{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">Descendente</a>
+    </div>
     
     <!-- Lista de artículos -->
     <div class="articulos__cargados">
@@ -41,14 +48,12 @@
                     <p class="articulo__titulo"> {{ articulo.titulo }}</p>
                     <p>Autor: {{ articulo.autor }}</p>
                     <p><strong>Categoría:</strong> {{ articulo.categoria.nombre }}</p>
-                    
                 </div>
             </a>
             <a class="detalles" href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">VER MÁS DETALLE</a>
         </div>
         {% empty %}
         <div class="zero__articulos">
-
             <p>No hay artículos disponibles en esta categoría.</p>
         </div>
         {% endfor %}
@@ -58,5 +63,4 @@
     </div>
     
 </section>
-    {% endblock contenido %}
-    
+{% endblock contenido %}

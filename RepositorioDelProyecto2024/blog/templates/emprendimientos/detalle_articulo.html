@@ -4,6 +4,7 @@
 <!-- detalle_articulo.html -->
 
 <h1>{{ articulo.titulo }}</h1>
+<p>Visitas: {{ articulo.visitas }}</p>  <!-- Muestra el contador de visitas -->
 <p>{{ articulo.contenido }}</p>
 <p>Publicado por: {{ articulo.autor }}</p>
 
@@ -22,8 +23,6 @@
 
 <h3>Agregar un comentario</h3>
 
-<p></p>
-
 <form action="{% url 'comentarios:agregar_comentario' articulo_id=articulo.id %}" method="post">
     {% csrf_token %}
     <textarea name="contenido" required></textarea>
@@ -33,13 +32,4 @@
 <a href="{% url 'emprendimientos:editar_articulo' articulo.pk %}">Editar</a> |
 <a href="{% url 'emprendimientos:eliminar_articulo' articulo.pk %}">Eliminar</a>
 
-
-
-
 {% endblock contenido %}
-
-
-
-
-
-
