@@ -14,10 +14,12 @@ class Articulo(models.Model):
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
-    imagen = models.ImageField(upload_to='imagenes/',blank=True , null=True)
+    imagen = models.ImageField(upload_to='imagenes/', blank=True, null=True)
     destacado = models.BooleanField(default=False)
+    visitas = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.titulo
+
 
 
