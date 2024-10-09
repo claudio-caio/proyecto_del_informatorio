@@ -32,23 +32,30 @@
         <div class="articulo-item">
             <!-- Validación para mostrar la imagen si existe, y mensaje si no existe -->
             {% if articulo.imagen %}
+            <a  href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">
                 <img  class="imagen__cargadad" src="{{ articulo.imagen.url }}" alt="{{ articulo.titulo }}">
-            {% else %}
+                {% else %}
                 <p>No hay imagen disponible</p>
-            {% endif %}
-            <div class="articulo_caracteristicas">
-                <p class="articulo__titulo"> {{ articulo.titulo }}</p>
-                <p>Autor: {{ articulo.autor }}</p>
-                <p><strong>Categoría:</strong> {{ articulo.categoria.nombre }}</p>
-            </div>
+                {% endif %}
+                <div class="articulo_caracteristicas">
+                    <p class="articulo__titulo"> {{ articulo.titulo }}</p>
+                    <p>Autor: {{ articulo.autor }}</p>
+                    <p><strong>Categoría:</strong> {{ articulo.categoria.nombre }}</p>
+                    
+                </div>
+            </a>
             <a class="detalles" href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">VER MÁS DETALLE</a>
         </div>
         {% empty %}
-        <p>No hay artículos disponibles en esta categoría.</p>
+        <div class="zero__articulos">
+
+            <p>No hay artículos disponibles en esta categoría.</p>
+        </div>
         {% endfor %}
     </div>
-    
-    <a href="{% url 'index' %}">VOLVER AL HOME</a>
+    <div class="boton__home">
+        <a href="{% url 'index' %}">VOLVER AL HOME</a>
+    </div>
     
 </section>
     {% endblock contenido %}

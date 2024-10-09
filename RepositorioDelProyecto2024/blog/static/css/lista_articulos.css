@@ -8,6 +8,8 @@
     background-image: url('../img/fondoprueba.png');
 }
 
+/*Titulo */
+
 .titulo__articulos {
     padding: 20px 0;
     font-size: 20px;
@@ -17,12 +19,19 @@
     font-size: 160%;
 }
 
+/*Titulo  End*/
+
+/* Filtroador*/
+
 .filtrado__lista {
     padding: 20px 0;
     color: var(--color-blanco);
     font-size: 15px;
 }
 
+/* Filtroador End*/
+
+/*Galeria De Articulos Cargados */
 .articulos__cargados {
     display: flex;
     padding: 0px 195px;
@@ -33,32 +42,38 @@
     padding-bottom: 300px;
 }
 
+
 .articulo-item {
     display: flex;
     padding: 20px 67px;
     flex-direction: column;
     align-content: center;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-evenly;    
 }
 
-
 .articulo_caracteristicas {
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     width: 225.5px;
-    background-color: var(--color-blanco);
+    background-color: rgba(255, 255, 255, 0.5);
     justify-content: center;
     align-items: center;
     align-content: center;
     flex-wrap: nowrap;
     text-align: center;
+    line-height: 19px;
+    color: var(--color-negro);
+    box-shadow: 12px -7px 10px rgb(28 5 5 / 53%);
 }
 
 .articulo_caracteristicas .articulo__titulo {
     display: flex;
     font-weight: bold;
     font-size: 100%;
+    
+    
 }
 
 .detalles {
@@ -68,14 +83,44 @@
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
+    box-shadow: 12px -7px 10px rgb(28 5 5 / 53%);
 }
 
 
 .imagen__cargadad {
     width: 225.5px;
     height: 199.5px;
-
+    box-shadow: 12px -7px 10px rgb(28 5 5 / 53%);
 }
 
 
+.articulo-item:hover {
+    transform: scale(1.15);
+}
+
+.zero__articulos {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: baseline;
+    padding: 150px;
+    font-size: 20px;
+    color: var(--color-blanco);
+}
+
+/*Galeria De Articulos Cargados End*/
+
+/*Boton De Regreso a Inicio*/
+.boton__home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+
+/*Boton De Regreso a Inicio End*/
 
