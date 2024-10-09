@@ -1,5 +1,5 @@
 .contenedor__listas {
-    max-width: 1472px;
+    width: 100%;
     padding-top: 100px;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,33 @@
     font-size: 15px;
 }
 
+.ordenar__visitas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.ordenar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.ascendente, .descendente {
+    background-color: var(--color-purpura);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--color-blanco);
+}
+
 /* Filtroador End*/
 
 /*Galeria De Articulos Cargados */
@@ -39,7 +66,7 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    padding-bottom: 300px;
+    padding-bottom: 150px;
 }
 
 
@@ -115,12 +142,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black;
+    background-color: var(--color-purpura);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 15px;
+    box-shadow: 12px -7px 10px rgb(28 5 5 / 53%);
 }
 
+
+.regreso__home {
+    color: var(--color-blanco);
+}
 
 /*Boton De Regreso a Inicio End*/
 

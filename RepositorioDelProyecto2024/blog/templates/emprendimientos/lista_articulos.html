@@ -29,8 +29,10 @@
     <!-- Enlaces para ordenar por visitas -->
     <div class="ordenar__visitas">
         <h3>Ordenar por visitas:</h3>
-        <a href="?ordenar_por=asc{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">Ascendente</a>
-        <a href="?ordenar_por=desc{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">Descendente</a>
+        <div class="ordenar">
+            <a class="ascendente" href="?ordenar_por=asc{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">Ascendente</a>
+            <a class="descendente" href="?ordenar_por=desc{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">Descendente</a>
+        </div>
     </div>
     
     <!-- Lista de artículos -->
@@ -59,7 +61,7 @@
         {% endfor %}
     </div>
     <div class="boton__home">
-        <a href="{% url 'index' %}">VOLVER AL HOME</a>
+        <a  class="regreso__home" href="{% url 'index' %}">VOLVER AL HOME</a>
     </div>
     
 </section>

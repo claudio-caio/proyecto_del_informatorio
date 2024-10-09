@@ -97,7 +97,7 @@ class ArticuloDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.request.user == articulo.autor 
     
 class PaginaPrincipalView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'base.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

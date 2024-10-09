@@ -1,15 +1,40 @@
 {% extends "base.html" %}
 
-
 {% block contenido %}
+    <section class="form-section">
+        <h4>COMPARTINOS TU EMPRENDIMIENTO</h4>
 
-    <h4>CREAR UN LIBRO</h4>
+        <form class="crear" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
 
-    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
-        {{form.as_p }}
+            <div class="form-groups">
+                <label for="id_titulo">Título:</label>
+                {{ form.titulo }}  <!-- Campo de título -->
+            </div>
 
-        <button type="submit">CREAR</button>
-    </form>
+            <div class="form-groups">
+                <label for="id_autor">Autor:</label>
+                {{ form.autor }}  <!-- Campo del autor -->
+            </div>
 
-    <a href="{% url 'emprendimientos:lista_articulos' %}">Volver a la lista de artículos</a>
-{% endblock contenido%}
+            <div class="form-groups">
+                <label for="id_contenido">Contenido:</label>
+                {{ form.contenido }}  <!-- Campo de contenido -->
+            </div>
+
+            <div class="form-groups">
+                <label for="id_categoria">Categoría:</label>
+                {{ form.categoria }}  <!-- Campo de categoría -->
+            </div>
+
+            <div class="form-groups">
+                <label for="id_imagen">Imagen:</label>
+                {{ form.imagen }}  <!-- Campo de imagen -->
+            </div>
+
+            <button type="submit" class="btn-submit">CREAR</button>
+        </form>
+
+        <a href="{% url 'emprendimientos:lista_articulos' %}" class="btn-back">Volver a la lista de artículos</a>
+    </section>
+{% endblock contenido %}

@@ -1,18 +1,36 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-  Registro
+Registro
 {% endblock titulo %}
 
 {% block contenido %}
+<section class="form_section">
+<div class="config_reg">
+  <h2 class="titulo-registro">Registro de Usuario</h2>
+  <form class="registro" action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
 
-    <h4>Registro de Usuario</h4>
-
-    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
-        {{form.as_p }}
-
-        <button type="submit">Registrarme</button>
-    </form>
-
-
-{% endblock contenido%}
+    <div class="form-group">
+      {{ form.username.label_tag }} {{ form.username }}
+    </div>
+    <div class="form-group">
+      {{ form.first_name.label_tag }} {{ form.first_name }}
+    </div>
+    <div class="form-group">
+      {{ form.last_name.label_tag }} {{ form.last_name }}
+    </div>
+    <div class="form-group">
+      {{ form.email.label_tag }} {{ form.email }}
+    </div>
+    <div class="form-group">
+      {{ form.password1.label_tag }} {{ form.password1 }}
+    </div>
+    <div class="form-group">
+      {{ form.password2.label_tag }} {{ form.password2 }}
+    </div>
+  <button type="submit" class="btn-registrar">Registrarme</button>
+  </form>
+</div>
+</section>
+{% endblock contenido %}

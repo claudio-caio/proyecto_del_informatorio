@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="{% static 'css/reset.css' %}">
         <link rel="stylesheet" href="{% static 'css/lista_articulos.css' %}">
         <link rel="stylesheet" href="{% static 'css/crear_articulo.css' %}">
+        <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
     </head>
 
     <body>
@@ -36,16 +38,16 @@
                     <div class="contenedor__registro">
                         <ul class="encabezado__navegador--registro">
                             {% if user.is_authenticated %}
-                            <li><a href="{% url 'Usuarios:perfil' %}" class="registro"> Perfil de Usuario</a></li>                     
+                            <li><a href="{% url 'Usuarios:perfil' %}" class="registros"> Perfil de Usuario</a></li>                     
                                 <li> 
-                                    <form action="{% url 'Usuarios:logout' %}" method="post" style="display:inline;">
+                                    <form class="form_registros" action="{% url 'Usuarios:logout' %}" method="post" >
                                        {% csrf_token %}
-                                       <button type="submit" class="registro">Cerrar sesión</button>
+                                       <button type="submit" class="registros">Cerrar sesión</button>
                                     </form>
                                 </li>
                             {% else %}
-                                <li><a href="{% url 'Usuarios:login' %}" class="registro">Iniciar Sesión</a></li>
-                                <li><a href="{% url 'Usuarios:registro_usuario' %}" class="registro">Registrarme</a></li>
+                                <li><a href="{% url 'Usuarios:login' %}" class="registros">Iniciar Sesión</a></li>
+                                <li><a href="{% url 'Usuarios:registro_usuario' %}" class="registros">Registrarme</a></li>
                             {% endif %}
                         </ul>
                     </div>

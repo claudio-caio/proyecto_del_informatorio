@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/fondoprueba.png');
+    color: var(--color-blanco);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h4 {
+    color: var(--color-blanco);
+    text-align: center;
+    margin-top: 80px;
+    font-weight: bold;
+    font-size: 160%;
+}
+
+.crear {
+    max-width: 600px;
+    margin: 35px auto; 
+    padding: 20px;
+    background-color: var(--color-azulpupura);
+    border-radius: 9px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.form-groups {
+    margin-bottom: 15px;
+}
+
+.form-groups label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-blanco);
+}
+
+.form-groups input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--color-negro);
+}
+
+
+.form-groups select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--color-negro);
+}
+
+.form-groups textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--color-negro);
+}
+
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-purpura);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-negro);
+}
+
+
+.btn-back {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--color-blanco);
+    text-decoration: none;
+
+}
+
+.btn-back:hover {
+    color: var(--color-negro);
+}
+
+
+html, body {
+    height: 100%;
+}
+
+
+main {
+    min-height: calc(100vh - 100px); 
+    padding-bottom: 40px;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--color-azulpupura);
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
