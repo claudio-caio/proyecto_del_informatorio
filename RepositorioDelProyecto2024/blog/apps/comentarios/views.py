@@ -32,6 +32,11 @@ class ComentarioUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('emprendimientos:detalle_articulo', kwargs={'pk': self.object.articulo.pk})
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['articulo'] = self.object.articulo  # Asegúrate de incluir el artículo en el contexto
+        return context
+
 
 class ComentarioDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Comentario

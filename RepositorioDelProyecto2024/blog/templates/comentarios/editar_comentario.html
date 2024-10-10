@@ -1,7 +1,7 @@
 <!-- editar_comentario.html -->
 {% extends 'base.html' %}
 
-{% block content %}
+{% block contenido %}
   <h2>Editar Comentario</h2>
   <form method="post">
     {% csrf_token %}
@@ -10,4 +10,4 @@
     <button type="submit">Actualizar</button>
   </form>
   <a href="{% url 'emprendimientos:detalle_articulo' articulo.id %}">Volver al artículo</a>
-{% endblock %}
+{% endblock contenido %}
