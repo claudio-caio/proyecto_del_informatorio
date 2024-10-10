@@ -85,7 +85,9 @@ class ArticuloUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         articulo = self.get_object()
-        return self.request.user == articulo.autor or self.request.user.is_superuser  # Solo el autor puede editar
+        return (self.request.user == articulo.autor or 
+            self.request.user.is_superuser or 
+            self.request.user.is_staff)
 
 class ArticuloDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Articulo
@@ -94,7 +96,9 @@ class ArticuloDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         articulo = self.get_object()
-        return self.request.user == articulo.autor or self.request.user.is_superuser
+        return (self.request.user == articulo.autor or 
+            self.request.user.is_superuser or 
+            self.request.user.is_staff)
     
 class PaginaPrincipalView(TemplateView):
     template_name = 'base.html'

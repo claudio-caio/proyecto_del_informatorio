@@ -10,7 +10,7 @@ h1 {
     font-size: 160%;
 }
 
-h2 {
+.nosotros__titulo {
     color: var(--color-blanco);
     margin-bottom: 20px; 
     margin-top: 40px; 
@@ -60,6 +60,6 @@ h3 {
     color: #ffffff;
 }
 
-ul {
+.trabajo {
     margin-bottom: 20px;
 }

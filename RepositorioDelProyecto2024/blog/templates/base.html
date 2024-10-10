@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <!--fonts-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-
+        <link rel="icon" type="img/png" href="{% static 'img/infovector.png' %}">
         <!-- Bootstrap CSS v5.2.1 -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'css/index.css' %}">
@@ -25,12 +25,12 @@
         <div class="contenendor__encabezado">
             <header class="encabezado">
                 <div class="log">
-                    INFO <img src="" alt="">
+                    <img class="logo_chaco" src="{% static 'img/logo_chaco.png' %}" alt="">
                 </div>
                 <div class="contenedor__navegacion">
                     <nav class="encabezado__navegador">
                         <ul class="encabezado__navegador--lista">
-                            <li><a href="{% url 'index' %}" class="navegacion">Home</a></li>
+                            <li><a href="{% url 'index' %}" class="navegacion">Inicio</a></li>
                             <li><a href="{% url 'emprendimientos:lista_articulos' %}" class="navegacion">Emprendimientos</a></li>
                             <li><a href="{% url 'emprendimientos:crear_articulo' %}" class="navegacion">Cargar articulo</a></li>
                             <li><a href="{% url 'contacto' %}" class="navegacion">Contacto</a></li>
@@ -66,24 +66,29 @@
                 <div class="footer__logo-container">
                     <img class="footer__logo-icon" src="{% static 'img/infovector.png' %}" alt="">
                     <div class="footer__info-container">
-                        <div class="footer__text-info">Avenida Simpre Viva N°142</div>
+                        <div class="footer__text-info">Marcelo T .de Alvear 145, Resistencia, Argentina</div>
                         <div class="footer__text-info">Proyecto desarrollado por alumnos del Informatorio Chaco</div>
-                        <div class="footer__text-info">
-                            Total de visitas: {{ total_visitas }}
-                        </div>
+                        <div class="footer__text-info"></div>
                     </div>
                 </div>
                 <div class="footer__social-media-container">
-                    <div class="footer__social-media-text">Accede a nuestras redes sociales:</div>
+                    <div class="footer__social-media-text">Redes sociales de Informatorio:</div>
                     <div class="footer__social-media-icons">
-                        <a href="">
-                            <img class="footer__social-media-icon" alt="" src="{% static 'img/whatsapp-1.svg' %}" />
+                        <a href="" class="iconos__redes">
+                            <img class="footer__social-media-icon" alt="" src="{% static 'img/whatsapp-1.svg' %}" /><h5>+54 9 1234567890</h5> 
                         </a>
-                        <a href="">
-                            <img class="footer__social-media-icon" alt="" src="{% static 'img/instragam-1.svg' %}" />
+                        <a href="https://www.instagram.com/informatorio/" class="iconos__redes">
+                            <img class="footer__social-media-icon" alt="" src="{% static 'img/instragam-1.svg' %}" /><h5>www.instagram.com/informatorio</h5>
+
                         </a>
-                        <a href="">
-                            <img class="footer__social-media-icon" alt="" src="{% static 'img/twiter-1.svg' %}" />
+                        <a href="https://x.com/InformatorioCh" class="iconos__redes">
+                            <img class="footer__social-media-icon" alt="" src="{% static 'img/twiter-1.svg' %}" /><h5>@InformatorioCh</h5>
+                        </a>
+                        <a href="https://www.facebook.com/informatorio.chaco" class="iconos__redes">
+                            <img class="footer__social-media-icon" alt="" src="{% static 'img/facebook-1.svg' %}" /><h5>www.facebook.com/informatorio.chaco</h5>
+                        </a>
+                        <a href="https://www.linkedin.com/company/informatorio-chaco/" class="iconos__redes">
+                            <img  class="footer__social-media-icon" alt="" src="{% static 'img/LinkedIn-1.svg' %}" /><h5>www.linkedin.com/company/informatorio-chaco</h5>
                         </a>
                     </div>
                 </div>

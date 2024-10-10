@@ -5,7 +5,7 @@
     <img class="imagen__detalle" src="{{ articulo.imagen.url }}" alt="{{ articulo.titulo }}">
     <div class="art_det">
         <h1 class="titulo_art">{{ articulo.titulo }}</h1>
-        <p class="p_description">{{ articulo.contenido }}</p>
+        <p class="p_description">{{ articulo.contenido|linebreaksbr }}</p>
         <p class="p_description">Publicado por: {{ articulo.autor }}</p>
     </div>
 

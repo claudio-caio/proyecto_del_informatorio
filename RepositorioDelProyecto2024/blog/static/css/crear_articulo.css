@@ -108,11 +108,3 @@ main {
     padding-bottom: 40px;
 }
 
-footer {
-    text-align: center;
-    background-color: var(--color-azulpupura);
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}

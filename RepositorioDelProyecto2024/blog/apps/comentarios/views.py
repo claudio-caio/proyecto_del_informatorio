@@ -25,9 +25,13 @@ class ComentarioUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = ['contenido']  # Solo editamos el contenido
     template_name = 'comentarios/editar_comentario.html'
 
-    def test_func(self):
+    def test_func(self): 
         comentario = self.get_object()
-        return self.request.user == comentario.autor  # Solo el autor puede editar el comentario
+        return (self.request.user == comentario.autor or 
+                self.request.user.is_superuser or 
+                self.request.user.is_staff)
+
+
 
     def get_success_url(self):
         return reverse_lazy('emprendimientos:detalle_articulo', kwargs={'pk': self.object.articulo.pk})
@@ -44,7 +48,10 @@ class ComentarioDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         comentario = self.get_object()
-        return self.request.user == comentario.autor  # Solo el autor puede eliminar el comentario
+        return (self.request.user == comentario.autor or 
+                self.request.user.is_superuser or 
+                self.request.user.is_staff)
+
 
     def get_success_url(self):
         return reverse_lazy('emprendimientos:detalle_articulo', kwargs={'pk': self.object.articulo.pk})

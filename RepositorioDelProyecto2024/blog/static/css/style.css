@@ -42,12 +42,13 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
 }
 
 .contenedor__navegacion {
     display: flex;
-    gap: 60px;
+    gap: 40px;
+    padding-top: 10px;
 }
 
 .encabezado__navegador--lista,
@@ -67,10 +68,10 @@ a {
 }
 
 .navegacion:hover {
-    color: var(--color-negro);
+    color: #7fe6ff;
 }
 .registros:hover {
-    color: var(--color-negro);
+    color: #7fe6ff;
 }
 
 .form_registros button {
@@ -78,6 +79,19 @@ a {
     font-size: 16px;
     margin-top: -11px;
 }
+
+
+.log {
+    
+    width: 40px;
+    
+}
+
+.logo_chaco {
+    max-width: 40px;
+
+}
+
 
 /*Encabezado End*/
  
@@ -89,7 +103,7 @@ a {
     background-image: url('../img/2.png');
     background-size: cover;
     width: 100%;
-    padding: 40px 0;
+    padding: 10px 0;
     margin-top: -4px;
 }
 
@@ -133,6 +147,7 @@ a {
 
 .footer__social-media-container {
     text-align: center;
+    padding-top: 5px;
 }
 
 .footer__social-media-text {
@@ -142,10 +157,33 @@ a {
     font-weight: 400;
     line-height: 28px;
     margin-bottom: 16px;
+    text-align: left;
+
 }
 
 .footer__social-media-icon {
-    width: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: stretch;
 }
 
+
+.iconos__redes {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+h5 {
+    color: var(--color-blanco);
+}
+
+h5:hover {
+    color: #7fe6ff;
+}
 /*Footer End */
