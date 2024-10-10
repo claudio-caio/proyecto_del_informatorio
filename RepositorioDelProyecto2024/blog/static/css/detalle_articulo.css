@@ -1,16 +1,13 @@
 .art_detalle {
-    margin: 75px 150px;
-    /* Margen automático para centrar el contenedor */
+    margin: 75px 336px;
     max-width: 800px;
-    /* Ancho máximo del contenedor */
     padding: 20px;
-    /* Espaciado interno */
     background-color: #19388d;
-    /* Fondo del contenedor */
     border-radius: 8px;
-    /* Bordes redondeados */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    /* Sombra */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 .art_det{
     margin-bottom: 20px;
@@ -93,4 +90,9 @@ button:hover {
 .boton_visit{
     padding: 1%;
     font-size: larger;
+}
+
+
+.imagen__detalle {
+    width: 100%;
 }

@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contenido %}
-<h1>SOY CONTACTO</h1>
+<div class="container">
+    <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.6373395760934!2d-58.99002042491637!3d-27.449410876331367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cf51b77dbb5%3A0x1552257f02b17d95!2sMarcelo%20T.%20de%20Alvear%20145%2C%20H3506%20Resistencia%2C%20Chaco!5e0!3m2!1ses!2sar!4v1728598124191!5m2!1ses!2sar" width="600" height="490" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <form class="contact-form" action="https://formsubmit.co/your@email.com" method="POST">
+        <h2 class="form-title">Contacto</h2>
+
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-input" type="text" id="nombre" name="nombre" required>
+
+        <label class="form-label" for="apellido">Apellido</label>
+        <input class="form-input" type="text" id="apellido" name="apellido" required>
+
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" name="email" required>
+
+        <label class="form-label" for="consulta">Consulta</label>
+        <textarea class="form-textarea" id="consulta" name="consulta" required></textarea>
+
+        <button class="form-button" type="submit">Enviar</button>
+    </form>
+</div>
 {% endblock contenido %}

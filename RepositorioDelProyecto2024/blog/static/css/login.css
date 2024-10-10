@@ -83,7 +83,10 @@
 .form-group {
     margin-bottom: 20px;
     /* Espacio entre campos */
+    color: var(--color-negro);
 }
+
+
 
 /* Estilo para los inputs */
 .form-group input {
