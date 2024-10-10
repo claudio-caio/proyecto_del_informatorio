@@ -1,5 +1,56 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contenido %}
-<h1>SOY NOSOTROS</h1>
+<h1 class="nosotros-title">NOSOTROS</h1>
+<div class="nosotros-container"> 
+    <section class="nosotros-section">
+        
+
+        <p class="nosotros-intro">Bienvenidos a nuestro blog dedicado a la promoción y difusión de los emprendimientos chaqueños. Somos el equipo 8 de la comisión 2 del Informatorio, apasionados por impulsar y conectar a los emprendedores de nuestra provincia. Nuestro equipo está conformado por 7 integrantes, dividido en dos partes esenciales para el desarrollo del blog: back end y front end.</p>
+
+        <div class="team-section">
+            <h3 class="team-title">STAFF BACK END</h3>
+            <ul class="lista-sin-estilo">
+                <li>Diego Ivan Gómez</li>
+                <li>Leandro Mathieu</li>
+                <li>Agustin Exequiel Argüello</li>
+            </ul>
+
+            <h3 class="team-title">STAFF FRONT END</h3>
+            <ul class="lista-sin-estilo">
+                <li>Hebe Miño</li>
+                <li>Claudio Fabian Tomadín Alegre Montañes</li>
+                <li>Ezequiel Mesa Pohorilo</li>
+                <li>Lara De Lucca</li>
+            </ul>
+        </div>
+
+        <p class="nosotros-description">A través de este blog, buscamos crear una plataforma colaborativa donde los emprendedores chaqueños puedan compartir sus historias, dar a conocer sus productos y servicios, y generar oportunidades de colaboración. Nuestro objetivo es contribuir al crecimiento del ecosistema emprendedor de Chaco, brindando un espacio accesible para que cada proyecto tenga visibilidad y se convierta en una fuente de inspiración para otros.</p>
+
+        <h2>Perfiles de Usuarios</h2>
+        <p>El blog ha sido diseñado para ofrecer una experiencia dinámica e interactiva mediante la implementación de tres perfiles de usuario principales, además del super admin otorgado por Django:</p>
+        <ul>
+            <li><strong>Visitante:</strong> Acceso libre para explorar el blog, leer artículos, filtrar publicaciones por categorías, y tener la posibilidad de registrarse.</li>
+            <li><strong>Miembro (Usuario Registrado):</strong> Los miembros pueden navegar, crear artículos, comentar artículos, editar o eliminar sus propios comentarios, y gestionar su sesión con opciones de registro, logueo y deslogueo.</li>
+            <li><strong>Colaborador:</strong> Un perfil clave que otorga mayor control sobre el contenido, permitiendo la creación, edición y eliminación de artículos y fotos asociadas, así como la posibilidad de moderar los comentarios de los usuarios y organizar las publicaciones mediante categorías temáticas.</li>
+        </ul>
+
+        <h2>Funcionalidades del Blog</h2>
+        <p>El blog no solo ofrece una interfaz intuitiva y funcional para sus usuarios, sino que también incluye una serie de funcionalidades clave que permiten una experiencia personalizada:</p>
+        <ul>
+            <li><strong>Gestión de contenido:</strong> Los colaboradores pueden crear, leer, editar y eliminar artículos y comentarios.</li>
+            <li><strong>Filtrado de publicaciones:</strong> Los usuarios pueden filtrar las publicaciones por categoría, antigüedad, cantidad de visitas (ascendente y descendente) y orden alfabético.</li>
+            <li><strong>Interacción social:</strong> Los miembros pueden interactuar con el contenido a través de comentarios.</li>
+            <li><strong>Acceso seguro:</strong> El blog permite a los usuarios registrarse, iniciar sesión y cerrar sesión de manera segura.</li>
+        </ul>
+
+        <h2>Secciones Clave del Blog</h2>
+        <ul>
+            <li><strong>Inicio:</strong> Presenta una selección de los artículos más recientes y destacados, facilitando una vista general de los contenidos más relevantes.</li>
+            <li><strong>Categorías:</strong> Organiza el contenido en temas específicos, facilitando la navegación y búsqueda de información relevante.</li>
+            <li><strong>Nosotros:</strong> Proporciona una descripción del propósito del blog y un vistazo al equipo detrás de este proyecto.</li>
+            <li><strong>Contacto:</strong> Ofrece a los visitantes una vía directa para ponerse en contacto con el equipo a través de un formulario o redes sociales.</li>
+        </ul>
+    </section>
+</div>
 {% endblock contenido %}

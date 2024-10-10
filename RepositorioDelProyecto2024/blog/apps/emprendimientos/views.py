@@ -54,16 +54,16 @@ class ArticuloDetailView(DetailView):
         context['comentarios'] = Comentario.objects.filter(articulo=self.object)
         return context
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, args, **kwargs):
         articulo = self.get_object()
-        contenido = request.POST.get('contenido')  
+        contenido = request.POST.get('contenido')
         if contenido:
             Comentario.objects.create(
                 contenido=contenido,
                 articulo=articulo,
                 autor=request.user
             )
-        return self.get(request, *args, **kwargs)
+        return self.get(request,args, **kwargs)
 
 
 class ArticuloCreateView(LoginRequiredMixin, CreateView):

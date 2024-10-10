@@ -2,34 +2,38 @@
 
 {% block contenido %}
 <!-- detalle_articulo.html -->
-
-<h1>{{ articulo.titulo }}</h1>
-<p>Visitas: {{ articulo.visitas }}</p>  <!-- Muestra el contador de visitas -->
-<p>{{ articulo.contenido }}</p>
-<p>Publicado por: {{ articulo.autor }}</p>
-
+<section class="art_detalle">
+    <div  class="art_det">
+        <h1 class="titulo_art">{{ articulo.titulo }}</h1>
+        <p class="p_description">{{ articulo.contenido }}</p>
+        <p class="p_description">Publicado por: {{ articulo.autor }}</p>
+    </div>
 <!-- Aquí comienzan los comentarios -->
-<h2>Comentarios</h2>
+    <h2 class="p_description">Comentarios</h2>
 
-{% for comentario in articulo.comentarios.all %}
-    <div>
+    {% for comentario in articulo.comentarios.all %}
+    <div class="art_det">
         <p><strong>{{ comentario.autor.username }}</strong> dice:</p>
-        <p>{{ comentario.contenido }}</p>
+        <p class="art_com">{{ comentario.contenido }}</p>
         <p><em>{{ comentario.fecha }}</em></p>
     </div>
-{% empty %}
+    {% empty %}
     <p>No hay comentarios aún.</p>
-{% endfor %}
+    {% endfor %}
+    <div class="art_com">
+        <h3>Agregar un comentario</h3>
 
-<h3>Agregar un comentario</h3>
-
-<form action="{% url 'comentarios:agregar_comentario' articulo_id=articulo.id %}" method="post">
-    {% csrf_token %}
-    <textarea name="contenido" required></textarea>
-    <button type="submit">Enviar Comentario</button>
-</form>
-
-<a href="{% url 'emprendimientos:editar_articulo' articulo.pk %}">Editar</a> |
-<a href="{% url 'emprendimientos:eliminar_articulo' articulo.pk %}">Eliminar</a>
-
+        <form action="{% url 'comentarios:agregar_comentario' articulo_id=articulo.id %}" method="post">
+        {% csrf_token %}
+            <textarea class="comentario_textarea" name="contenido" required></textarea>
+            <button type="submit">Enviar Comentario</button>
+        </form>
+    </div>
+    <div class="art_det">
+        <a class="boton_det" href="{% url 'emprendimientos:editar_articulo' articulo.pk %}">Editar</a> |
+        <a class="boton_det" href="{% url 'emprendimientos:eliminar_articulo' articulo.pk %}">Eliminar</a>
+        
+        <p class="boton_visit">Visitas: {{ articulo.visitas }}</p> <!-- Muestra el contador de visitas -->
+    </div>
+</section>
 {% endblock contenido %}
