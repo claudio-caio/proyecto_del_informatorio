@@ -1,0 +1,13 @@
+<!-- editar_comentario.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Editar Comentario</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="id_contenido">Contenido:</label>
+    <input type="text" name="contenido" id="id_contenido" value="{{ form.contenido.value|default:'' }}">
+    <button type="submit">Actualizar</button>
+  </form>
+  <a href="{% url 'emprendimientos:detalle_articulo' articulo.id %}">Volver al artículo</a>
+{% endblock %}

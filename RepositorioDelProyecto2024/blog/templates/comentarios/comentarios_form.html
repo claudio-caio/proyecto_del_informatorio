@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<div class="art_com">
+    <h3>{% if comentario %}Editar Comentario{% else %}Agregar Comentario{% endif %}</h3>
+    <form action="{% if comentario %}{% url 'comentarios:editar_comentario' comentarios.pk %}{% else %}{% url 'comentarios:agregar_comentario' articulo_id=articulo.id %}{% endif %}" method="post">
+        {% csrf_token %}
+        <textarea class="comentario_textarea" name="contenido" required>{% if comentario %}{{ comentario.contenido }}{% endif %}</textarea>
+        <button type="submit">{% if comentario %}Actualizar Comentario{% else %}Enviar Comentario{% endif %}</button>
+    </form>
+</div>
+{% endblock contenido %}
