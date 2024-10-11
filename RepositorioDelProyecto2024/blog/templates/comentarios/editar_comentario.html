@@ -2,12 +2,20 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-  <h2>Editar Comentario</h2>
-  <form method="post">
-    {% csrf_token %}
-    <label for="id_contenido">Contenido:</label>
-    <input type="text" name="contenido" id="id_contenido" value="{{ form.contenido.value|default:'' }}">
-    <button type="submit">Actualizar</button>
-  </form>
-  <a href="{% url 'emprendimientos:detalle_articulo' articulo.id %}">Volver al artículo</a>
+<section class="comentario_encuadre">
+  <div class="titulo_comentario">
+    <h2 class="titulo_comentario">Editar Comentario</h2>
+      <form method="post">
+          {% csrf_token %}
+        <label for="id_contenido">Contenido:</label>
+        <input type="text" name="contenido" id="id_contenido" value="{{ form.contenido.value|default:'' }}">
+        <button type="submit">Actualizar</button>
+      </form>
+    </div>
+  </section>
+    <div class="titulo_comentario">
+      <div class="boton_edit_comment">
+        <a class="botoncito_comentario" href="{% url 'emprendimientos:detalle_articulo' articulo.id %}">Volver al artÃ­culo</a>
+      </div>
+    </div>
 {% endblock contenido %}

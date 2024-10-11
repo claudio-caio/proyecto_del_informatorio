@@ -1,11 +1,53 @@
+
 {% extends 'base.html' %}
 
 
 
 {% block contenido %}
-  <h4>Perfil de {{ user.username }}</h4>
-  <p>Email: {{ user.email }}</p>
-  <p>Nombre: {{ user.first_name }} {{ user.last_name }}</p>
-  <p>Fecha de registro: {{ user.date_joined }}</p>
-  
+{% load static %}
+<section class="config_per">
+  <div class="perfil_encuadrado">
+  <h4 class="titulo_perfil">Perfil de {{ user.username }}</h4>
+    <div class="p_titulo">
+      <p>Email: {{ user.email }}</p>
+    </div>
+    <div class="p_titulo">
+      <p>Nombre: {{ user.first_name }} {{ user.last_name }}</p>
+    </div>
+    <div class="p_titulo">
+      <p>Fecha de registro: {{ user.date_joined }}</p>
+    </div>
+
+    <!-- Selector de avatar -->
+    <div class="avatar_selector">
+      <label for="avatar">Elige tu avatar:</label>
+      <select id="avatar" name="avatar" onchange="updateAvatar()">
+        <option value="male">Avatar Masculino</option>
+        <option value="female">Avatar Femenino</option>
+      </select>
+    </div>
+
+    <!-- Contenedor de avatar -->
+    <div class="avatar_container">
+      <img id="avatarImage" src="{% static 'img/avatar_male.jpg' %}" alt="Avatar Masculino" class="avatar_image">
+    </div>
+  </div>
+</section>
+
+<script>
+  function updateAvatar() {
+    const avatarSelect = document.getElementById("avatar");
+    const avatarImage = document.getElementById("avatarImage");
+
+    if (avatarSelect.value === "male") {
+      avatarImage.src = "{% static 'img/avatar_male.jpg' %}";
+      avatarImage.alt = "Avatar Masculino";
+    } else {
+      avatarImage.src = "{% static 'img/avatar_female.jpg' %}";
+      avatarImage.alt = "Avatar Femenino";
+    }
+  }
+</script>
 {% endblock contenido %}
+  
+

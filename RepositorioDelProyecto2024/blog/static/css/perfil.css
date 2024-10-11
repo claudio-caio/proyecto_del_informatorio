@@ -1,0 +1,39 @@
+.titulo_perfil{
+    padding: 8%;
+    margin-top: auto;
+}
+
+.config_per {
+    text-align: center;
+    padding: 10%;
+}
+
+.perfil_encuadrado {
+    border: 2px solid #fff;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #1a237e;
+    color: #fff;
+    max-width: 440px;
+    margin: auto;
+    box-shadow:3px -1px 5px rgb(28 5 5 / 53%);
+}
+
+.p_titulo {
+    margin-bottom: 10px;
+}
+
+.avatar_selector {
+    margin-top: 20px;
+}
+
+.avatar_container {
+    margin-top: 15px;
+    padding-top: inherit;
+}
+.avatar_image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
